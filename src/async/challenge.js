@@ -22,3 +22,15 @@ const anotherFn = async urlApi => {
 
 anotherFn(API);
 
+// Playgroud
+
+async function runCode() {
+    const url = 'https://domain-api-com';
+    try {
+      await fetch(url);
+    } catch{
+      throw new Error('API Not Found');
+    }
+  }
+
+runCode();

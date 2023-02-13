@@ -17,3 +17,26 @@ const anotherFunction = async () => {
 console.log('Before');
 anotherFunction();
 console.log('After');
+
+// Challenge
+async function runCode(url) {
+	const options = {
+	  method: "GET"
+	}
+  
+	try {
+	  new URL(url)
+	} catch (error) {
+	  throw new Error('Invalid URL');
+	}
+  
+	try {
+	  const response = await fetch(url, options);
+	  const data = await response.json();
+	  console.log(data);
+	  return data
+	} catch (error) {
+	  throw new Error('Something was wrong');
+	}
+  }
+  runCode('https://api.escuelajs.co/api/v1/categories')
